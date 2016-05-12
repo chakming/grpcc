@@ -11,7 +11,6 @@ program
   .option('-p, --proto <path>', 'path to a protobuf file describing the service (required)')
   .option('-d, --directory <path>', 'path to a protobuf file directory')
   .option('-a, --address <host:port>', 'the address of the service to connect to (required)')
-  .option('-s, --service <name>', 'the name of the service to connect to (optional)')
   .option('-i, --insecure', 'use an insecure connection (default=false)', false)
   .parse(process.argv);
 
@@ -27,8 +26,10 @@ if (!program.address || program.address.indexOf(':') < 0) {
 }
 
 try {
-  grpcc(program.proto, program.directory, program.service, program.address, {
-    insecure: program.insecure
+  grpcc(program.proto,
+    (program.directory) ? program.directory : process.cwd(),
+    program.address, {
+      insecure: program.insecure
   });
 } catch (e) {
   console.error(e);
