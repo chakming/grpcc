@@ -1,10 +1,10 @@
 {
   "name": "grpcc",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "A gRPC cli interface for easy testing against gRPC servers",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "grpc": "^0.12.0",
+    "grpc": "^1.0.0",
     "inquirer": "^1.0.2"
   },
   "bin": {
@@ -65,6 +65,6 @@
     "tmp": "tmp/grpcc-0.0.1.tgz_1454975767622_0.20959731633774936"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.1.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.5.tgz",
+  "readme": "README.md"
 }
